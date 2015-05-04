@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2015 a las 12:55:41
+-- Tiempo de generación: 04-05-2015 a las 13:40:30
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -44,9 +44,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 CREATE TABLE IF NOT EXISTS `locals` (
 `id` int(11) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `state` int(11) NOT NULL,
-  `entryDate` varchar(10) NOT NULL,
-  `outDate` varchar(10) NOT NULL
+  `state` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -86,6 +84,8 @@ CREATE TABLE IF NOT EXISTS `product` (
 CREATE TABLE IF NOT EXISTS `reserve` (
 `id` int(11) NOT NULL,
   `date` date NOT NULL,
+  `entryDate` varchar(11) NOT NULL,
+  `outDate` varchar(11) NOT NULL,
   `idClient` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
