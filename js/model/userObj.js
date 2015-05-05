@@ -12,9 +12,9 @@ function userObj(){
 	}
 
 	//getters & setters
-	this.getId = function(){return this.id};
-	this.getNick = function(){return this.nick};
-	this.getPassword = function(){return this.password};
+	this.getId = function(){return this.id;}
+	this.getNick = function(){return this.nick;}
+	this.getPassword = function(){return this.password;}
 
 	this.setId = function (id) {this.id=id;}
 	this.setNick = function (nick) {this.nick=nick;}

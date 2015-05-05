@@ -1,9 +1,10 @@
 <?php
 
-class LocalsClass{
+class LocalClass{
 	//Class properties
 	private $id;
 	private $address;
+	private $price_hour;
 	private $state;
 
 	//******************	Data base Values    ******************/
@@ -11,12 +12,13 @@ class LocalsClass{
 	private static $colNameId = "id";
 	private static $colNameDate = "address";
 	private static $colNameIdClient = "state";
+	private static $colPriceHour = "price_hsour";
 
 	//CONSTRUCTOR
 	function __construct(){}
 
 	//****************	GETTERS & SETTERS  ****************/
-	public function getId(){
+	public function getId(){ 
 		return $this->id;
 	}
 
@@ -27,7 +29,7 @@ class LocalsClass{
 	public function getAddress(){
 		return $this->address;
 	}
-
+	
 	public function setAddress($address){
 		$this->address = $address;
 	}
@@ -40,6 +42,13 @@ class LocalsClass{
 		$this->state = $state;
 	}
 
+	public function getPriceHour(){
+		return $this->price_hour;
+	}
+
+	public function setPriceHour($price_hour){
+		$this->price_hour = $price_hour;
+	}
 }
 
 ?>

@@ -16,11 +16,11 @@ function reserveObj(){
 	}
 
 	//getters & setters
-	this.getId = function(){return this.id};
-	this.getDate = function(){return this.date};
-	this.getEntryTime = function(){return this.EntryTime};
-	this.getOutTime = function(){return this.OutTime};
-	this.getIdClient = function(){return this.idClient};
+	this.getId = function(){return this.id;}
+	this.getDate = function(){return this.date;}
+	this.getEntryTime = function(){return this.entryTime;}
+	this.getOutTime = function(){return this.outTime;}
+	this.getIdClient = function(){return this.idClient;}
 
 
 	this.setId = function (id) {this.id=id;}

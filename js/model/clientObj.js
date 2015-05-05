@@ -18,12 +18,12 @@ function clientObj(){
 	}
 
 	//getters & setters
-	this.getId = function(){return this.id};
-	this.getEmail = function(){return this.email};
-	this.getName = function(){return this.name};
-	this.getSurname1 = function(){return this.surname1};
-	this.getSurname2 = function(){return this.surname2};
-	this.getDni = function(){return this.dni};
+	this.getId = function(){return this.id;}
+	this.getEmail = function(){return this.email;}
+	this.getName = function(){return this.name;}
+	this.getSurname1 = function(){return this.surname1;}
+	this.getSurname2 = function(){return this.surname2;}
+	this.getDni = function(){return this.dni;}
 
 	this.setId = function (id) {this.id=id;}
 	this.setEmail = function (email) {this.email=email;}

@@ -16,11 +16,11 @@ function productObj(){
 	}
 
 	//getters & setters
-	this.getId = function(){return this.id};
-	this.getType = function(){return this.type};
-	this.getName = function(){return this.name};
-	this.getPrice = function(){return this.price};
-	this.getDescription = function(){return this.description};
+	this.getId = function(){return this.id;}
+	this.getType = function(){return this.type;}
+	this.getName = function(){return this.name;}
+	this.getPrice = function(){return this.price;}
+	this.getDescription = function(){return this.description;}
 
 	this.setId = function (id) {this.id=id;}
 	this.setType = function (type) {this.type=type;}

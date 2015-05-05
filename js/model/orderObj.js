@@ -16,11 +16,11 @@ function orderObj(){
 	}
 
 	//getters & setters
-	this.getId = function(){return this.id};
-	this.getIdClient = function(){return this.idClient};
-	this.getIdProduct = function(){return this.idProduct};
-	this.getOrderNumber = function(){return this.orderNumber};
-	this.getDate = function(){return this.date};
+	this.getId = function(){return this.id;}
+	this.getIdClient = function(){return this.idClient;}
+	this.getIdProduct = function(){return this.idProduct;}
+	this.getOrderNumber = function(){return this.orderNumber;}
+	this.getDate = function(){return this.date;}
 
 	this.setId = function (id) {this.id=id;}
 	this.setIdClient = function (idClient) {this.idClient=idClient;}
