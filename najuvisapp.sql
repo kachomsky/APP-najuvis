@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2015 a las 13:40:30
+-- Tiempo de generación: 05-05-2015 a las 11:26:11
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -38,13 +38,14 @@ CREATE TABLE IF NOT EXISTS `client` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `locals`
+-- Estructura de tabla para la tabla `local`
 --
 
-CREATE TABLE IF NOT EXISTS `locals` (
+CREATE TABLE IF NOT EXISTS `local` (
 `id` int(11) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `state` int(11) NOT NULL
+  `state` int(11) NOT NULL,
+  `price_hour` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -84,8 +85,8 @@ CREATE TABLE IF NOT EXISTS `product` (
 CREATE TABLE IF NOT EXISTS `reserve` (
 `id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `entryDate` varchar(11) NOT NULL,
-  `outDate` varchar(11) NOT NULL,
+  `entryTime` date NOT NULL,
+  `outTime` date NOT NULL,
   `idClient` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -112,9 +113,9 @@ ALTER TABLE `client`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `locals`
+-- Indices de la tabla `local`
 --
-ALTER TABLE `locals`
+ALTER TABLE `local`
  ADD PRIMARY KEY (`id`);
 
 --
@@ -151,9 +152,9 @@ ALTER TABLE `user`
 ALTER TABLE `client`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `locals`
+-- AUTO_INCREMENT de la tabla `local`
 --
-ALTER TABLE `locals`
+ALTER TABLE `local`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `order`

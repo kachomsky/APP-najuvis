@@ -4,16 +4,16 @@ class ReserveClass{
 	//Class properties
 	private $id;
 	private $date;
-	private $entryDate;
-	private $outDate;
+	private $entryTime;
+	private $outTime;
 	private $idClient;
 
 	//******************	Data base Values    ******************/
 	private static $tableName = "reserve";
 	private static $colNameId = "id";
 	private static $colNameDate = "date";
-	private static $colNameEntryDate = "entryDate";
-	private static $colNameOutDate = "outDate";
+	private static $colNameEntryTime = "entryTime";
+	private static $colNameOutTime = "outTime";
 	private static $colNameIdClient = "idClient";
 
 	//CONSTRUCTOR
@@ -36,20 +36,20 @@ class ReserveClass{
 		$this->date = $date;
 	}
 
-	public function getEntryDate(){
-		return $this->entryDate;
+	public function getEntryTime(){
+		return $this->entrytime;
 	}
 
-	public function setEntryDate($entryDate){
-		$this->entryDate = $entryDate;
+	public function setEntryTime($entryTime){
+		$this->entryTime = $entryTime;
 	}
 
-	public function getOutDate(){
-		return $this->outDate;
+	public function getOutTime(){
+		return $this->outTime;
 	}
 
-	public function setOutDate($outDate){
-		$this->outDate = $outDate;
+	public function setOutTime($outTime){
+		$this->outTime = $outTime;
 	}
 
 	public function getIdClient(){
