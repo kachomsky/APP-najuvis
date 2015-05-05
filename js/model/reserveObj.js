@@ -2,31 +2,31 @@ function reserveObj(){
 	//Attributes
 	this.id;
 	this.date;
-	this.entryDate;
-	this.outDate;
+	this.entryTime;
+	this.outTime;
 	this.idClient;
 
 	//methods
-	this.construct = function(id, date, entryDate, outDate, idClient){
+	this.construct = function(id, date, entryTime, outTime, idClient){
 		this.setId(id);
 		this.setDate(date);
-		this.setEntryDate(entryDate);
-		this.setOutDate(outDate);
+		this.setEntryTime(entryTime);
+		this.setOutTime(outTime);
 		this.setIdClient(idClient);
 	}
 
 	//getters & setters
 	this.getId = function(){return this.id};
 	this.getDate = function(){return this.date};
-	this.getEntryDate = function(){return this.EntryDate};
-	this.getOutDate = function(){return this.OutDate};
+	this.getEntryTime = function(){return this.EntryTime};
+	this.getOutTime = function(){return this.OutTime};
 	this.getIdClient = function(){return this.idClient};
 
 
 	this.setId = function (id) {this.id=id;}
 	this.setDate = function (date) {this.date=date;}
-	this.setEntryDate = function (entryDate) {this.entryDate=entryDate;}
-	this.setOutDate = function (outDate) {this.outDate=outDate;}
+	this.setEntryTime = function (entryTime) {this.entryTime=entryTime;}
+	this.setOutTime = function (outTime) {this.outTime=outTime;}
 	this.setIdClient = function (idClient) {this.idClient=idClient;}
 
 	this.arrayToString = function (arrayReserveObj)
@@ -41,7 +41,7 @@ function reserveObj(){
 	
 	this.toString = function ()
 	{
-		var reserveString ="id="+this.getId()+" date="+this.getDate()+" idClient="+this.getIdClient()+" entryDate="+this.getEntryDate()+" outDate="+this.getOutDate();
+		var reserveString ="id="+this.getId()+" date="+this.getDate()+" idClient="+this.getIdClient()+" entryTime="+this.getEntryTime()+" outTime="+this.getOutTime();
 		
 		return reserveString;		
 	}
