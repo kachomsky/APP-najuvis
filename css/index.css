@@ -6,6 +6,14 @@ html{
 body{
 	width: 100%;
 	height: 100%;
+	background: rgb(254,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(254,255,255,1) 0%, rgba(210,235,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,255,255,1)), color-stop(100%,rgba(210,235,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 ); /* IE6-9 */
 }
 
 .header{
@@ -32,58 +40,88 @@ body{
 .titleNajuvis{
 	/*float: left;*/
 	display: inline;
+	color:white;
+	/*font-family: 'Allan', Helvetica, Arial, sans-serif;*/
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-weight: bold; 
 }
 
 .eslogan{
 	float: right;
 	display: inline;
+	font-family: 'Dancing Script', Georgia, Times, serif;
+	font-weight: bold;    
+}
+
+.imagesSlider{
+	width: 500px;
+	
+}
+
+footer
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: #f5f5f5;
+	width:100%;
+	height:5%;
+	background-color: #202020;
+	text-align: center;
+	color: #C0C0C0;
+}
+
+.infoContact{
+	float: left;
+	display: inline;
+}
+
+.socialLogos{
+	float: right;
+	display: inline;
+}
+
+.redSocial:hover{
+	background-color:red; 
 }
 
 
-/*************************** BOOSTRAP CHANGES ********************************/
+/********************BOOTSTRAP************************/
+
+.jumbotron {
+	 /*background-color: #4A84EF;*/
+	 background: #cedbe9; /* Old browsers */
+	 margin-bottom: 0px;
+	 padding: 1%;
+	 background: rgb(37,141,200); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(37,141,200,1) 0%, rgba(37,141,200,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(37,141,200,1)), color-stop(100%,rgba(37,141,200,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(37,141,200,1) 0%,rgba(37,141,200,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(37,141,200,1) 0%,rgba(37,141,200,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(37,141,200,1) 0%,rgba(37,141,200,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(37,141,200,1) 0%,rgba(37,141,200,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 ); /* IE6-9 */
+}
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 	color: #000;  /*Sets the text hover color on navbar*/
 	background-color: #D4D2D2;
+	padding-bottom: 0px;
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
- a:hover, .navbar-default .navbar-nav > .active > a:focus {
-color: white; /*BACKGROUND color for active*/
-background-color: #030033;
+ .navbar-default {
+	background: #e2e2e2; /* Old browsers */
+	background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
 }
 
-  .navbar-default {
-    background-color: #D6DB82;  /*backgorund color del nav */
-    border-color: #030033;  /*/*backgorund color del nav*/
+.navbar{
+	margin-bottom: 0px;
 }
-
-  .dropdown-menu > li > a:hover,
-   .dropdown-menu > li > a:focus {
-    color: #262626;
-   text-decoration: none;
-  background-color: #66CCFF;  /*change color of links in drop down here*/
-   }
-
- .nav > li > a:hover,
- .nav > li > a:focus {
-    text-decoration: none;
-    background-color: silver; /*Change rollover cell color here*/
-  }
-
-
-  .navbar-default .navbar-nav > li > a {
-   color: white; /*Change active text color here*/
-
-  }
-
- .jumbotron {
-	 background-color: #BBA163;
-	 margin-bottom: 0px;
-	 padding: 1%;
-}
-
-.navbar {
-    border-radius: 0px;
-}
-
