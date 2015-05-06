@@ -5,14 +5,16 @@ function orderObj(){
 	this.idProduct;
 	this.orderNumber;
 	this.date;
+	this.quantity;
 
 	//methods
-	this.construct = function(id, idClient, idProduct, orderNumber, date){
+	this.construct = function(id, idClient, idProduct, orderNumber, date, quantity){
 		this.setId(id);
 		this.setIdClient(idClient);
 		this.setIdProduct(idProduct);
 		this.setOrderNumber(orderNumber);
-		this.setdate(date);
+		this.setDate(date);
+		this.setQuantity(quantity);
 	}
 
 	//getters & setters
@@ -21,12 +23,14 @@ function orderObj(){
 	this.getIdProduct = function(){return this.idProduct;}
 	this.getOrderNumber = function(){return this.orderNumber;}
 	this.getDate = function(){return this.date;}
+	this.getQuantity = function(){return this.quantity;}
 
 	this.setId = function (id) {this.id=id;}
 	this.setIdClient = function (idClient) {this.idClient=idClient;}
 	this.setIdProduct = function (idProduct) {this.idProduct=idProduct;}
 	this.setOrderNumber = function (orderNumber) {this.orderNumber=orderNumber;}
 	this.setDate = function (date) {this.date=date;}
+	this.setQuantity = function (quantity) {this.quantity=quantity;}
 
 	this.arrayToString = function (arrayOrderObj)
 	{
@@ -41,7 +45,7 @@ function orderObj(){
 	this.toString = function ()
 	{
 		var orderString ="id="+this.getId()+" idClient="+this.getIdClient()+" idProduct="+this.getIdProduct();
-		orderString +=" orderNumber="+this.getOrderNumber()+" date="+this.getDate();
+		orderString +=" orderNumber="+this.getOrderNumber()+" date="+this.getDate()+" quantity="+this.getQuantity();
 		
 		return orderString;		
 	}

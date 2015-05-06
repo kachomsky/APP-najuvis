@@ -7,6 +7,7 @@ class OrderClass{
 	private $idProduct;
 	private $orderNumber;
 	private $date;
+	private $quantity;
 
 	//******************	Data base Values    ******************/
 	private static $tableName = "order";
@@ -15,6 +16,7 @@ class OrderClass{
 	private static $colNameIdProduct = "idProduct";
 	private static $colNameOrderNumber = "orderNumber";
 	private static $colNameDate = "date";
+	private static $colNameQuantity = "quantity";
 
 	//CONSTRUCTOR
 	function __construct(){}
@@ -58,6 +60,14 @@ class OrderClass{
 
 	public function setDate($date){
 		$this->date = $date;
+	}
+
+	public function getQuantity(){
+		return $this->quantity;
+	}
+
+	public function setQuantity($quantity){
+		$this->quantity = $quantity;
 	}
 
 }

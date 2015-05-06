@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2015 a las 11:26:11
+-- Tiempo de generación: 06-05-2015 a las 13:02:39
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -59,7 +59,8 @@ CREATE TABLE IF NOT EXISTS `order` (
   `idClient` int(11) NOT NULL,
   `idProduct` int(11) NOT NULL,
   `orderNumber` int(11) NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -73,7 +74,8 @@ CREATE TABLE IF NOT EXISTS `product` (
   `type` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
   `price` double NOT NULL,
-  `description` varchar(255) NOT NULL
+  `description` varchar(255) NOT NULL,
+  `image` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

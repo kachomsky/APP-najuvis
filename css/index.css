@@ -53,6 +53,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', end
 	font-weight: bold;    
 }
 
+.description{
+	margin-left: 2%;
+}
+
+.imageRecommended{
+	opacity: 0.7;
+}
+
+.imageRecommended:hover{
+	opacity: 2;
+}
+
+h3{
+	font-family: 'Dancing Script', Georgia, Times, serif;
+}
+
 .imagesSlider{
 	width: 500px;
 	
@@ -60,7 +76,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', end
 
 footer
 {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	/* Set the fixed height of the footer here */
@@ -108,7 +124,6 @@ footer
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 	color: #000;  /*Sets the text hover color on navbar*/
 	background-color: #D4D2D2;
-	padding-bottom: 0px;
 }
 
  .navbar-default {

@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<html ng-app="najuvisManagement" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -13,15 +13,30 @@
 	<!--JAVASCRIPT-->
     <script src="js/control/SliderControl/ninja-slider.js" type="text/javascript"></script>
     <script src="js/control/SliderControl/ninjaVideoPlugin.js" type="text/javascript"></script>
+    <!-- JQuery-->
+	<script src="js/frameWorks/jQuery/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+   <!--DATEPICKER-->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type = "text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type = "text/javascript"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel = "Stylesheet" type="text/css" /> 
+    <!-- Angular-->
+    <script src="js/frameWorks/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+    <script src="js/frameWorks/angular/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
 	<!--CSS FONTS-->
-	<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+	<!-- CONTROL ANGULAR -->
+	 <script src="js/control/index.js" type="text/javascript" xml:space="preserve"></script>
+	<!-- MODEL ANGULAR OBJECTS -->
+	<script src="js/model/clientObj.js" type="text/javascript" xml:space="preserve"></script>
+	<script src="js/model/localObj.js" type="text/javascript" xml:space="preserve"></script>
+	<script src="js/model/orderObj.js" type="text/javascript" xml:space="preserve"></script>
+	<script src="js/model/productObj.js" type="text/javascript" xml:space="preserve"></script>
+	<script src="js/model/reserveObj.js" type="text/javascript" xml:space="preserve"></script>
+	<script src="js/model/userObj.js" type="text/javascript" xml:space="preserve"></script>
+
   </head>
-  <body>
+  <body ng-controller="najuvisManagementController as cafeteriaCtrl" ng-init="cafeteriaCtrl.getProductsData()">
 	  	<header>
 		  	<div class="jumbotron">
 		  		<div id="title">
@@ -41,25 +56,11 @@
 	  				<li><a href="#"><img src="images/twitter.png" alt="twitter" width="20" height="20" class="redSocial"/></a></li>
 	  			</ul>
 		  	</nav>
-		  	
 	  	</header>
-	  	<div>
-	  	<!--start-->
-        <div id='ninja-slider'>
-            <ul>
-                <li><div data-image="images/products/1.jpg" class="imagesSlider"></div></li>
-                <li><div data-image="images/products/cookies.jpg" class="imagesSlider"></div></li>
-                <li>
-                    <div data-image="images/products/1.jpg" class="imagesSlider">
-                        <a class="video" href="https://www.youtube.com/watch?v=j6PbonHsqW0"></a>
-                    </div>
-                </li>
-                <li><div data-image="images/products/1.jpg" class="imagesSlider"></div></li>
-                <li><a data-image="images/products/1.jpg" class="imagesSlider"></a></li>
-            </ul>
-        </div>
-        <!--end-->
-	  		Este es el contenido
+	  	<div id="content">
+	  	<!-- TEMPLATES ANGULAR-->
+	  		<recommended id=""></recommended>
+	  	<!-- *****************-->
 	  	</div>
 	  	<footer class="footer">
 	  		<p class="infoContact">Información de contacto</p>
