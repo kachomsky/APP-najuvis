@@ -97,4 +97,15 @@
 		};
 	});				
 
+	//Template to show products
+	najuvis.directive("header", function (){
+		return {
+		  restrict: 'E',
+		  templateUrl:"header.html",
+		  controller:function(){
+		  },
+		  controllerAs: 'header'
+		};
+	});		
+
 })();

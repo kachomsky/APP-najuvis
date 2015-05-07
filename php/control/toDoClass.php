@@ -26,5 +26,4 @@ class toDoClass{
 		}
 		return json_encode($outPutData);
 	}
-
 }

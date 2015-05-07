@@ -4,12 +4,12 @@ require_once "BDnajuvisApp.php";
 
 class ProductClass{
 	//Class properties
-	private $id;
-	private $type;
-	private $name;
-	private $price;
-	private $description;
-	private $image;
+	public $id;
+	public $type;
+	public $name;
+	public $price;
+	public $description;
+	public $image;
 
 	//******************	Data base Values    ******************/
 	private static $tableName = "product";

@@ -1,16 +1,15 @@
 <!--start-->
 <div ng-show="pageToShow == 0">
-        <div id='ninja-slider'>
+        <div id='ninja-slider' ng-init="najuvisCtrl.calculateRow()">
             <ul>
-                <li><div data-image="images/products/1.jpg" class="imagesSlider"></div></li>
-                <li><div data-image="images/products/cookies.jpg" class="imagesSlider"></div></li>
-                <li>
+                <li ng-repeat="products in najuvisCtrl.productsArray">
+                	<div data-image="{{products.getImage()}}" class="imagesSlider"></div>
+                </li>
+                <!--<li>
                     <div data-image="images/products/1.jpg" class="imagesSlider">
                         <a class="video" href="https://www.youtube.com/watch?v=j6PbonHsqW0"></a>
                     </div>
-                </li>
-                <li><div data-image="images/products/1.jpg" class="imagesSlider"></div></li>
-                <li><a data-image="images/products/1.jpg" class="imagesSlider"></a></li>
+                </li>-->
             </ul>
         </div>
         <!--end-->
@@ -19,20 +18,15 @@
 			 <div class="table-responsive">          
 			  <table class="table">
 			    <tbody>
-			      <tr>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			      </tr>
-			      <tr>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			      </tr>
-			      <tr>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
+			    <!--ng-repeat="products in najuvisCtrl.numberOfRowsArray"
+					ng-if="($index%2)!=0 || $index == 0"
+			    -->
+			      <tr ng-repeat="products in najuvisCtrl.numberOfRowsArray">
+			        <td ng-repeat="products in najuvisCtrl.productsArray">
+			        	<!--<div ng-if="($index%3)==0 && $index != 0"></div>-->
+			        	<a href="#"><img src="{{products.getImage()}}" height="100" width="100" class="imageRecommended" /></a>
+			        	<br/>{{products.getName()}}
+			        </td>
 			      </tr>
 			    </tbody>
 			  </table>
