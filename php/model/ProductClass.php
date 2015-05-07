@@ -172,6 +172,17 @@ class ProductClass{
     }
 
     /**
+	 * findByType()
+	 * It runs a query and returns an object array
+	 * @param none
+	 * @return object with the query results
+    */
+    public static function findByType( ) {
+    	$cons = "select * from `".ProductClass::$tableName."`";
+		return ProductClass::findByQuery( $cons );
+    }
+
+    /**
 	 * create()
 	 * insert a new row into the database
     */

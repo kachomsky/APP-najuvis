@@ -1,6 +1,6 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<html ng-app="productsManagement" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -8,34 +8,33 @@
   <title>Najuvis</title>
   <link rel="shortcut icon" HREF="images/logo.jpg"/>
   <!--CSS-->
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="../css/index.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
   <!--JAVASCRIPT-->
     <!-- JQuery-->
-  <script src="../js/frameWorks/jQuery/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/frameWorks/jQuery/jQuery.js" type="text/javascript" xml:space="preserve"></script>
    <!--DATEPICKER-->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type = "text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type = "text/javascript"></script>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel = "Stylesheet" type="text/css" /> 
     <!-- Angular-->
-    <script src="../js/frameWorks/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
-    <script src="../js/frameWorks/angular/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+    <script src="js/frameWorks/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+    <script src="js/frameWorks/angular/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
   <!--CSS FONTS-->
   <link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet" type="text/css">
   <!-- CONTROL ANGULAR -->
-   <script src="../js/control/productsController.js" type="text/javascript" xml:space="preserve"></script>
+   <script src="js/control/productsController.js" type="text/javascript" xml:space="preserve"></script>
   <!-- MODEL ANGULAR OBJECTS -->
-  <script src="../js/model/clientObj.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="../js/model/localObj.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="../js/model/orderObj.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="../js/model/productObj.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="../js/model/reserveObj.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="../js/model/userObj.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/model/clientObj.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/model/localObj.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/model/orderObj.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/model/productObj.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/model/reserveObj.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/model/userObj.js" type="text/javascript" xml:space="preserve"></script>
 <!--*********************************************-->
-<body>
-<head id="head"></head>
-<div ng-show="pageToShow == 1">
+<body ng-controller="productsManagementController as productsCtrl">
+<header-template id="headerTemplate"></header-template>
 <h3>Tipos de productos:</h3>
 <div class="row">
   <div class="col-sm-3">
@@ -52,10 +51,10 @@
         </div>
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="menuProducts"><a href="#">Tartas<img src="../images/icons/iconPastel.png" width="20" height="20" class="iconMenu" /></a></li>
-            <li class="menuProducts"><a href="#">Galletas<img src="../images/icons/iconGalletas.png" width="20" height="20" class="iconMenu"/></a></li>
-            <li class="menuProducts"><a href="#">Cupcake<img src="../images/icons/iconCupcake.png" width="20" height="20" class="iconMenu"/></a></li>
-            <li class="menuProducts"><a href="#">Bebidas<img src="../images/icons/iconBebida.png" width="20" height="20" class="iconMenu"/></a></li>
+            <li class="menuProducts"><a href="#">Tartas<img src="images/icons/iconPastel.png" width="20" height="20" class="iconMenu" /></a></li>
+            <li class="menuProducts"><a href="#">Galletas<img src="images/icons/iconGalletas.png" width="20" height="20" class="iconMenu"/></a></li>
+            <li class="menuProducts"><a href="#">Cupcake<img src="images/icons/iconCupcake.png" width="20" height="20" class="iconMenu"/></a></li>
+            <li class="menuProducts"><a href="#">Bebidas<img src="images/icons/iconBebida.png" width="20" height="20" class="iconMenu"/></a></li>
             <!--<li><a href="#">Reviews <span class="badge">1,118</span></a></li>-->
           </ul>
         </div><!--/.nav-collapse -->
@@ -64,7 +63,7 @@
   </div>
   <div class="col-sm-9">
   	<div class="productsToShow">
-    	<img src="../images/products/1.jpg" width="300" height="250" class="productToBuy"/>
+    	<img src="images/products/1.jpg" width="300" height="250" class="productToBuy"/>
     	<div class="productText">
     		<form>
 		    	<p><b>Nombre:</b> Pastel</p>
@@ -86,16 +85,16 @@
 			  <table class="table">
 			    <tbody>
 			      <tr>
-			        <td><a href="#"><img src="../images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			        <td><a href="#"><img src="../images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			        <td><a href="#"><img src="../images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
-			         <td><a href="#"><img src="../images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
+			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
+			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
+			        <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
+			         <td><a href="#"><img src="images/products/1.jpg" height="100" width="100" class="imageRecommended" /></a><br/>Pastel</td>
 			      </tr>
 			    </tbody>
 			  </table>
 			  </div>
 </div>
 </div>
-</div>
+<footer-template id="footerTemplate"></footer-template>
 </body>
 </html>

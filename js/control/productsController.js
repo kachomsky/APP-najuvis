@@ -1,10 +1,9 @@
 //Angular code
 (function (){
-	var najuvis = angular.module('najuvisManagement',['ng-currency']);
-	najuvis.controller('najuvisManagementController', function($scope){
-
+	var products = angular.module('productsManagement',['ng-currency']);
+	products.controller('productsManagementController', function($scope){
 		//scope properties
-		$scope.pageToShow = 0;
+		/*$scope.pageToShow = 0;
 
 		//Controller properties
 		this.productsArray = new Array();
@@ -47,65 +46,31 @@
 			for(var i=0; i<this.numberOfRows;i++){
 				this.numberOfRowsArray.push(i);
 			}
-		}
+		}*/
 
 	});
 
 
-	/**************TEMPLATES**********************/
-	//Template to show recommended products
-	najuvis.directive("recommended", function (){
+	/**************TEMPLATES**********************/		
+	//Template to show header
+	products.directive("headerTemplate", function (){
 		return {
 		  restrict: 'E',
-		  templateUrl:"templates/recommended.html",
+		  templateUrl:"templates/header-template.html",
 		  controller:function(){
 		  },
-		  controllerAs: 'recommended'
+		  controllerAs: 'headerTemplate'
 		};
-	});
-
-	//Template to show products
-	najuvis.directive("products", function (){
+	});	
+	//Template to show footer
+	products.directive("footerTemplate", function (){
 		return {
 		  restrict: 'E',
-		  templateUrl:"templates/products.html",
+		  templateUrl:"templates/footer-template.html",
 		  controller:function(){
 		  },
-		  controllerAs: 'products'
+		  controllerAs: 'footerTemplate'
 		};
-	});		
-
-	//Template to show locals
-	najuvis.directive("locals", function (){
-		return {
-		  restrict: 'E',
-		  templateUrl:"templates/locals.html",
-		  controller:function(){
-		  },
-		  controllerAs: 'locals'
-		};
-	});
-
-	//Template to show products
-	najuvis.directive("cakeDesigner", function (){
-		return {
-		  restrict: 'E',
-		  templateUrl:"templates/cake-designer.html",
-		  controller:function(){
-		  },
-		  controllerAs: 'cakeDesigner'
-		};
-	});				
-
-	//Template to show products
-	najuvis.directive("header", function (){
-		return {
-		  restrict: 'E',
-		  templateUrl:"header.html",
-		  controller:function(){
-		  },
-		  controllerAs: 'header'
-		};
-	});		
+	});	
 
 })();
