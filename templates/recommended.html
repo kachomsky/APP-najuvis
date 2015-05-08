@@ -1,5 +1,4 @@
 <!--start-->
-<div ng-show="pageToShow == 0">
         <div id='ninja-slider' ng-init="najuvisCtrl.calculateRow()">
             <ul>
                 <li ng-repeat="products in najuvisCtrl.productsArray">
@@ -21,7 +20,7 @@
 			    <!--ng-repeat="products in najuvisCtrl.numberOfRowsArray"
 					ng-if="($index%2)!=0 || $index == 0"
 			    -->
-			      <tr ng-repeat="products in najuvisCtrl.numberOfRowsArray">
+			      <tr>
 			        <td ng-repeat="products in najuvisCtrl.productsArray">
 			        	<!--<div ng-if="($index%3)==0 && $index != 0"></div>-->
 			        	<a href="#"><img src="{{products.getImage()}}" height="100" width="100" class="imageRecommended" /></a>

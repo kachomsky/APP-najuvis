@@ -26,4 +26,23 @@ class toDoClass{
 		}
 		return json_encode($outPutData);
 	}
+
+	static public function findProductByType($action,$JSONData){
+		$outPutData = array();
+		$errors = array();
+		$outPutData[0]=true;
+
+		$listProducts = ProductClass::findByType($JSONData);
+
+		if(count($listProducts)==0){
+			$outPutData[0]=false;
+			$errors[]="No products have been found into the database";
+			$outPutData[1]=$errors;
+		}
+		else{
+			$outPutData[1]=$listProducts;
+		}
+		return json_encode($outPutData);
+	}
+
 }

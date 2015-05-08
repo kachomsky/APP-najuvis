@@ -20,6 +20,10 @@ class controlClass{
 				case '10000':
 					echo toDoClass::listAllProducts($this->params['action']);
 				break;
+
+				case '10010':
+					echo toDoClass::findProductByType($this->params['action'], $this->params['JSONData']);
+				break;
 				
 				default:
 					echo "Action not correct, value: ".$this->params['action'];

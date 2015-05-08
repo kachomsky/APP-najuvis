@@ -167,18 +167,19 @@ class ProductClass{
 	 * @return object with the query results
     */
     public static function findAll( ) {
-    	$cons = "select * from `".ProductClass::$tableName."`";
+    	$cons = "select * from `".ProductClass::$tableName."` limit 8";
 		return ProductClass::findByQuery( $cons );
     }
 
     /**
 	 * findByType()
-	 * It runs a query and returns an object array
+	 * It find the products by type
 	 * @param none
 	 * @return object with the query results
     */
-    public static function findByType( ) {
-    	$cons = "select * from `".ProductClass::$tableName."`";
+    public static function findByType($type) {
+    	$cons = "select * from `".ProductClass::$tableName."` where ".ProductClass::$colNameType." = '".$type."'";
+		//return $cons;
 		return ProductClass::findByQuery( $cons );
     }
 

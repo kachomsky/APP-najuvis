@@ -10,7 +10,7 @@
 		this.productsArray = new Array();
 		this.controllerRows = 0; //variable to control the number of rows in recommended
 		this.numberOfRowsArray = new Array();
-		this.numberOfRows = 2;
+		this.numberOfRows = 4;
 
 		this.getProductsData = function(){
 			var outPutData = new Array();
