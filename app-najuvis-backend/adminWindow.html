@@ -33,10 +33,27 @@
   </head>
 
   <body class="documentColor" ng-controller="najuvisController as sessionCtrl" ng-init="sessionCtrl.checkSession()">
-	<div id="imageStart" align="left">
-		<img id="NajuvisCompany" src="images/logo.png"/>
-		<h2 id="title">Administrador NAJUVIS</h2>
-		<p><input type="button" value="LogOut" ng-click="sessionCtrl.logOut()"/><p>
-	</div>
+	<a><div style="border:1px solid black">
+		<h2 id="title" align="left" style="display: inline;">Administrador NAJUVIS</h2> 
+		<input type="button" value="LogOut" ng-click="sessionCtrl.logOut()" align="right"/>
+	</div></a>
+	<a href="usersWindow.html"><div style="border:1px solid black">
+		<p>Users</p>
+	</div></a>
+	<a href="clientsWindow.html"><div style="border:1px solid black">
+		<p>Clients</p>
+	</div></a>
+	<a href="localsWindow.html"><div style="border:1px solid black">
+		<p>Local</p>
+	</div></a>
+	<a href="productsWindow.html"><div style="border:1px solid black">
+		<p>Product</p>
+	</div></a>
+	<a href="ordersWindow.html"><div style="border:1px solid black">
+		<p>Order</p>
+	</div></a>
+	<a href="reservesWindow.html"><div style="border:1px solid black">
+		<p>Reserve</p>
+	</div></a>
   </body>
 </html>
