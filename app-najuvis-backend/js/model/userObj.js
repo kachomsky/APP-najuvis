@@ -10,6 +10,11 @@ function userObj(){
 		this.setNick(nick);
 		this.setPassword(password);
 	}
+	
+	this.construct2 = function(nick,password){
+		this.setNick(nick);
+		this.setPassword(password);
+	}
 
 	//getters & setters
 	this.getId = function(){return this.id;}
