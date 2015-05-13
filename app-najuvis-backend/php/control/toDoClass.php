@@ -1,6 +1,7 @@
 <?php
 
 require_once "../model/UserClass.php";
+require_once "../model/ClientClass.php";
 
 class toDoClass{
 	
@@ -56,6 +57,37 @@ class toDoClass{
 			}
 			
 			$outPutData[1]=$usersArray;
+		}
+		
+		return json_encode($outPutData);		
+	}
+	
+	static public function deleteUser($JSONData){
+		$delete = userClass::deleteOne($JSONData);
+	}
+	
+	static public function getAllClients(){
+	
+		$outPutData = array();
+		$errors = array();
+		$outPutData[0]=true;
+		//print_r($outPutData);
+		$clientList = clientClass::findAll();
+		//print_r($clientList);
+		if (count($clientList)==0)
+		{
+			$outPutData[0]=false;
+			$errors[]="Usuario no encontrado";
+			$outPutData[1]=$errors;
+		}
+		else
+		{
+			foreach ( $clientList as $client)
+			{
+				$clientsArray[]=$client->getAll();
+			}
+			
+			$outPutData[1]=$clientsArray;
 		}
 		
 		return json_encode($outPutData);		

@@ -89,6 +89,7 @@ class UserClass{
     private static function fromResultSetList( $res ) {
 		$entityList = array();
 		$i=0;
+		//print_r($res);
 		while ( ($row = $res->fetch_array(MYSQLI_BOTH)) != NULL ) {
 			//We get all the values an add into the array
 			$entity = UserClass::fromResultSet( $row );
@@ -144,6 +145,12 @@ class UserClass{
 	
 	public static function findAll(){
 		$cons = "select * from `".UserClass::$tableName."`";
+		
+		return UserClass::findByQuery( $cons );
+	}
+	
+	public function deleteOne($id){
+		$cons = "delete from `".UserClass::$tableName."` where ".UserClass::$colNameId." = ".$id;
 		
 		return UserClass::findByQuery( $cons );
 	}

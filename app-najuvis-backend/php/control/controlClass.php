@@ -25,6 +25,14 @@ class controlClass{
 					echo toDoClass::getAllUsers();
 				break;
 				
+				case '10002':
+					echo toDoClass::deleteUser($this->params['JSONData']);
+				break;
+				
+				case '10003':
+					echo toDoClass::getAllClients();
+				break;
+				
 				default:
 					echo "Action not correct, value: ".$this->params['action'];
 				break;

@@ -146,19 +146,24 @@ class clientClass{
 	 * @return objects collection
     */
     public static function findByQuery( $cons ) {
-	//Connection with the database
-	$conn = new BDnajuvisApp();
-	if (mysqli_connect_errno()) {
-    		printf("Connection with the database has failed, error: %s\n", mysqli_connect_error());
-    		exit();
-	}
-	
-	//Run the query
-	$res = $conn->query($cons);
+		//Connection with the database
+		$conn = new BDnajuvisApp();
+		if (mysqli_connect_errno()) {
+				printf("Connection with the database has failed, error: %s\n", mysqli_connect_error());
+				exit();
+		}
+		
+		//Run the query
+		$res = $conn->query($cons);
 
-	return ProductClass::fromResultSetList( $res );
+		return ClientClass::fromResultSetList( $res );
     }
-
+	
+	public static function findAll(){
+		$cons = "select * from `".ClientClass::$tableName."`";
+		
+		return ClientClass::findByQuery( $cons );
+	}
 }
 
 ?>

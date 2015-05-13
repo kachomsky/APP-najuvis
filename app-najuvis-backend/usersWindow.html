@@ -37,9 +37,17 @@
 		<h2 id="title"><a href="adminWindow.html">Administrador</a> > Lista Usuarios</h2>
 	</header>
 	<div id="templates" ng-init="userCtrl.getAllUsers()">
-		<table>
-			<tr><th>Selcciona</th><th>Nick</th><th>Password</th><th>Estado</th><th>Tipo</th><th>Eliminar</th><th>Modificar</th></tr>
-			<tr ng-repeat="user in userCtrl.usersArray"></tr>
+		<table class="table">
+			<tr><th>Selccionar</th><th>Nick</th><th>Password</th><th>Estado</th><th>Tipo</th><th>Modificar</th><th>Eliminar</th></tr>
+			<tr ng-repeat="user in userCtrl.usersArray" id="row{{user.getId()}}">
+				<td><input type="checkbox" id="{{user.getId()}}" /></td>
+				<td>{{user.getNick()}}</td>
+				<td>{{user.getPassword()}}</td>
+				<td>{{user.getState()}}</td>
+				<td>{{user.getType()}}</td>
+				<td>Modifica</td>
+				<td style="color:red" ng-click="userCtrl.deleteUser($index)">X</td>
+			</tr>
 		</table>
 	</div>
   </body>

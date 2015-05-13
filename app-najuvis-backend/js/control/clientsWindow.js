@@ -1,11 +1,12 @@
 //Angular code
 (function (){
-	var najuvis = angular.module("usersManagement",["ng-currency"]);
+	var najuvis = angular.module("clientsManagement",["ng-currency"]);
 	
-	najuvis.controller("usersController", function ($scope){
+	najuvis.controller("clientsController", function ($scope){
 		//Propierties
+		this.client = new clientObj();
 		this.user = new userObj();
-		this.usersArray = new Array();
+		this.clientsArray = new Array();
 		
 		this.checkSession = function () 
 		{
@@ -23,7 +24,7 @@
 			}	
 		}
 		
-		this.getAllUsers = function() 
+		this.getAllClients = function() 
 		{
 			var outPutdata = new Array();
 			
@@ -31,7 +32,7 @@
 				  url: 'php/control/control.php',
 				  type: 'POST',
 				  async: false,
-				  data: 'action=10001',
+				  data: 'action=10003',
 				  dataType: "json",
 				  success: function (response) { 
 					  outPutdata = response;
@@ -43,11 +44,11 @@
 			
 			if(outPutdata[0])
 			{
-				this.usersArray = new Array();
+				this.clientsArray = new Array();
 				for(var i = 0; i < outPutdata[1].length; i++){
-					this.user = new userObj();
-					this.user.construct(outPutdata[1][i].id, outPutdata[1][i].nick, outPutdata[1][i].password, outPutdata[1][i].state, outPutdata[1][i].type);
-					this.usersArray.push(this.user);
+					this.client = new clientObj();
+					this.client.construct(outPutdata[1][i].id, outPutdata[1][i].email, outPutdata[1][i].name, outPutdata[1][i].surname1, outPutdata[1][i].surname2, outPutdata[1][i].dni);
+					this.clientsArray.push(this.client);
 				}				
 			}
 			else
