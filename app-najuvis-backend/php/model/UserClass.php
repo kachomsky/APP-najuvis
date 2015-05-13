@@ -6,12 +6,16 @@ class UserClass{
 	private $id;
 	private $nick;
 	private $password;
+	private $state;
+	private $type;
 
 	//******************	Data base Values    ******************/
 	private static $tableName = "user";
 	private static $colNameId = "id";
 	private static $colNameNick = "nick";
 	private static $colNamePassword = "password";
+	private static $colNameState = "state";
+	private static $colNameType = "type";
 
 	//CONSTRUCTOR
 	function __construct(){}
@@ -41,18 +45,39 @@ class UserClass{
 		$this->password = $password;
 	}
 	
+	public function getState(){
+		return $this->state;
+	}
+	
+	public function setState($state){
+		$this->state = $state;
+	}
+	
+	public function getType(){
+		return $this->type;
+	}
+	
+	public function setType($type){
+		$this->type = $type;
+	}
+	
+	/*******methods*******/
 	private static function fromResultSet( $res ) {
 	//We get all the values form the query
 		$id = $res[ UserClass::$colNameId ];
         $nick = $res[ UserClass::$colNameNick ];
         $password = $res[ UserClass::$colNamePassword ];
+		$state = $res[ UserClass::$colNameState ];
+		$type = $res[ UserClass::$colNameType ];
 
        	//Object construction
        	$entity = new UserClass();
 		$entity->setId($id);
 		$entity->setNick($nick);
 		$entity->setPassword($password);
-
+		$entity->setState($state);
+		$entity->setType($type);
+		//print_r($entity);
 		return $entity;
     }
 	 /**
@@ -89,7 +114,7 @@ class UserClass{
 		}
 		//Run the query
 		$res = $conn->query($cons);
-		
+		//print_r($res);
 		if ( $conn != null ) $conn->close();
 		
 		return UserClass::fromResultSetList( $res );
@@ -101,7 +126,8 @@ class UserClass{
 	 * @return object with the query results
     */
     public static function findByNickAndPass( $nick, $password ) {
-		$cons = "select * from `".UserClass::$tableName."` where ".UserClass::$colNameNick." = \"".$nick."\" and ".UserClass::$colNamePassword." = \"".$password."\"";
+		$cons = "select * from `".UserClass::$tableName."` where ".UserClass::$colNameNick." = \"".$nick."\" and ".UserClass::$colNamePassword." = \"".$password."\" and ".UserClass::$colNameState."= \"1\"";
+		
 		return UserClass::findByQuery( $cons );
     }
 	
@@ -110,9 +136,17 @@ class UserClass{
 		$data["id"] = $this->id;
 		$data["nick"] = $this->nick;
 		$data["password"] = $this->password;
-
+		$data["state"] = $this->state;
+		$data["type"] = $this->type;
+		//print_r($data);
 		return $data;
     }
+	
+	public static function findAll(){
+		$cons = "select * from `".UserClass::$tableName."`";
+		
+		return UserClass::findByQuery( $cons );
+	}
 }
 
 ?>

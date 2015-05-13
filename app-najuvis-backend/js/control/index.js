@@ -35,7 +35,7 @@
 						alert(xhr.status+"\n"+thrownError);
 				  }	
 			});
-			
+			//alert(outPutdata[0]);
 			if(outPutdata[0])
 			{
 				this.user = new userObj();
@@ -45,7 +45,7 @@
 				
 				if(!typeof(Storage))
 				{
-					alert("This browser does not accept local variables");
+					alert("Este navegador no accepta variables locales.");
 				}
 				else
 				{

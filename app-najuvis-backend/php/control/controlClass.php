@@ -21,6 +21,10 @@ class controlClass{
 					echo toDoClass::userConnection($this->params['action'], $this->params['JSONData']);
 				break;
 				
+				case '10001':
+					echo toDoClass::getAllUsers();
+				break;
+				
 				default:
 					echo "Action not correct, value: ".$this->params['action'];
 				break;

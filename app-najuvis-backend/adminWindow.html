@@ -4,9 +4,9 @@
   <head>
 		<meta charset="utf-8">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>catering compani Tasteful</title>
+		<title>NAJUVIS | Administrador</title>
 		
-		<link rel="shortcut icon" HREF="images/logo.jpeg"/>
+		<link rel="shortcut icon" HREF="images/logo.png"/>
 		<!-- css-->
 		<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -33,27 +33,21 @@
   </head>
 
   <body class="documentColor" ng-controller="najuvisController as sessionCtrl" ng-init="sessionCtrl.checkSession()">
-	<a><div style="border:1px solid black">
-		<h2 id="title" align="left" style="display: inline;">Administrador NAJUVIS</h2> 
-		<input type="button" value="LogOut" ng-click="sessionCtrl.logOut()" align="right"/>
-	</div></a>
-	<a href="usersWindow.html"><div style="border:1px solid black">
-		<p>Users</p>
-	</div></a>
-	<a href="clientsWindow.html"><div style="border:1px solid black">
-		<p>Clients</p>
-	</div></a>
-	<a href="localsWindow.html"><div style="border:1px solid black">
-		<p>Local</p>
-	</div></a>
-	<a href="productsWindow.html"><div style="border:1px solid black">
-		<p>Product</p>
-	</div></a>
-	<a href="ordersWindow.html"><div style="border:1px solid black">
-		<p>Order</p>
-	</div></a>
-	<a href="reservesWindow.html"><div style="border:1px solid black">
-		<p>Reserve</p>
-	</div></a>
+	<table border="1" class="table">
+		<tr>
+			<td colspan="2"><h2 id="title" align="left" style="display: inline;">Administrador NAJUVIS</h2></td>
+			<td><input type="button" value="LogOut" ng-click="sessionCtrl.logOut()"/></td>
+		</tr>
+		<tr>
+			<td><a href="usersWindow.html">USUARIOS</a></td>
+			<td><a href="clientsWindow.html">CLIENTES</a></td>
+			<td><a href="localsWindow.html">LOCALES</a></td>
+		</tr>
+		<tr>
+			<td><a href="productsWindow.html">PRODUCTOS</a></td>
+			<td><a href="ordersWindow.html">PEDIDOS</a></td>
+			<td><a href="reservesWindow.html">RESERVAS</a></td>
+		</tr>
+	</table>
   </body>
 </html>
