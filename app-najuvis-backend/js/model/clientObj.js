@@ -6,15 +6,19 @@ function clientObj(){
 	this.surname1;
 	this.surname2;
 	this.dni;
+	this.address;
+	this.entryDate;
 
 	//methods
-	this.construct = function(id, email, name, surname1, surname2, dni){
+	this.construct = function(id, email, name, surname1, surname2, dni,address,entryDate){
 		this.setId(id);
 		this.setEmail(email);
 		this.setName(name);
 		this.setSurname1(surname1);
 		this.setSurname2(surname2);
 		this.setDni(dni);
+		this.setAddress(address);
+		this.setEntryDate(entryDate);
 	}
 
 	//getters & setters
@@ -24,6 +28,8 @@ function clientObj(){
 	this.getSurname1 = function(){return this.surname1;}
 	this.getSurname2 = function(){return this.surname2;}
 	this.getDni = function(){return this.dni;}
+	this.getAddress = function(){ return this.address; }
+	this.getEntryDate = function(){ return this.entryDate; }
 
 	this.setId = function (id) {this.id=id;}
 	this.setEmail = function (email) {this.email=email;}
@@ -31,6 +37,8 @@ function clientObj(){
 	this.setSurname1 = function (surname1) {this.surname1=surname1;}
 	this.setSurname2 = function (surname2) {this.surname2=surname2;}
 	this.setDni = function (dni) {this.dni=dni;}
+	this.setAddress = function(address) {this.address= address;}
+	this.setEntryDate = function(entryDate) { this.entryDate=entryDate;}
 
 	this.arrayToString = function (arrayClientObj)
 	{
@@ -45,7 +53,7 @@ function clientObj(){
 	this.toString = function ()
 	{
 		var clientString ="id="+this.getId()+" email="+this.getEmail()+" name="+this.getName();
-		clientString +=" surname1="+this.getSurname1()+" surname2="+this.getSurname2()+" dni="+this.getDni();
+		clientString +=" surname1="+this.getSurname1()+" surname2="+this.getSurname2()+" dni="+this.getDni()+" address="+this.getAddress()+" entryDate="this.getEntryDate();
 		
 		return clientString;		
 	}

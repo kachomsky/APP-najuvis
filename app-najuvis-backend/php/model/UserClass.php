@@ -7,7 +7,6 @@ class UserClass{
 	private $nick;
 	private $password;
 	private $state;
-	private $type;
 
 	//******************	Data base Values    ******************/
 	private static $tableName = "user";
@@ -15,7 +14,6 @@ class UserClass{
 	private static $colNameNick = "nick";
 	private static $colNamePassword = "password";
 	private static $colNameState = "state";
-	private static $colNameType = "type";
 
 	//CONSTRUCTOR
 	function __construct(){}
@@ -53,14 +51,6 @@ class UserClass{
 		$this->state = $state;
 	}
 	
-	public function getType(){
-		return $this->type;
-	}
-	
-	public function setType($type){
-		$this->type = $type;
-	}
-	
 	/*******methods*******/
 	private static function fromResultSet( $res ) {
 	//We get all the values form the query
@@ -68,7 +58,6 @@ class UserClass{
         $nick = $res[ UserClass::$colNameNick ];
         $password = $res[ UserClass::$colNamePassword ];
 		$state = $res[ UserClass::$colNameState ];
-		$type = $res[ UserClass::$colNameType ];
 
        	//Object construction
        	$entity = new UserClass();
@@ -76,7 +65,6 @@ class UserClass{
 		$entity->setNick($nick);
 		$entity->setPassword($password);
 		$entity->setState($state);
-		$entity->setType($type);
 		//print_r($entity);
 		return $entity;
     }
@@ -138,7 +126,6 @@ class UserClass{
 		$data["nick"] = $this->nick;
 		$data["password"] = $this->password;
 		$data["state"] = $this->state;
-		$data["type"] = $this->type;
 		//print_r($data);
 		return $data;
     }

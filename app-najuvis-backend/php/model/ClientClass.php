@@ -9,6 +9,8 @@ class clientClass{
 	private $surname1;
 	private $surname2;
 	private $dni;
+	private $address;
+	private $entryDate;
 
 	//******************	Data base Values    ******************/
 	private static $tableName = "client";
@@ -18,6 +20,8 @@ class clientClass{
 	private static $colNameSurname1 = "surname1";
 	private static $colNameSurname2 = "surname2";
 	private static $colNameDni = "dni";
+	private static $colNameAddress = "address";
+	private static $colNameEntryDate = "entryDate";
 
 	//CONSTRUCTOR
 	function __construct(){}
@@ -70,7 +74,23 @@ class clientClass{
 	public function setDni($dni){
 		$this->dni = $dni;
 	}
+	
+	public function getAddress(){
+		return $this->address;
+	}
+	
+	public function setAddress($address){
+		$this->address = $address;
+	}
 
+	public function getEntryDate(){
+		return $this->entryDate;
+	}
+	
+	public function setEntryDate($entryDate){
+		$this->entryDate=$entryDate;
+	}
+	
 	public function getAll(){
 		$data = array();
 		$data["id"] = $this->id;
@@ -79,17 +99,21 @@ class clientClass{
 		$data["surname1"] = $this->surname1;
 		$data["surname2"] = $this->surname2;
 		$data["dni"] = $this->dni;
+		$data["address"]  = $this->address;
+		$data["entryDate"] = $this->entryDate;
 
 		return $data;
 	}
 
-	public function setAll($id,$email,$name,$surname1,$surname2,$dni){
+	public function setAll($id,$email,$name,$surname1,$surname2,$dni,$address,$entryDate){
 		$this->setId($id);
 		$this->setEmail($email);
 		$this->setName($name);
 		$this->setSurname1($surname1);
 		$this->setSurname2($surname2);
 		$this->setDni($dni);
+		$this->setAddress($address);
+		$this->setEntryDate($entryDate);
 	}
 
 	//*************	Database management section *************//
@@ -126,6 +150,8 @@ class clientClass{
 		$surname1 = $res[ ClientClass::$colNameSurname1 ];
 		$surname2 = $res[ ClientClass::$colNameSurname2 ];
 		$dni = $res[ ClientClass::$colNameDni ];
+		$address = $res[ ClientClass::$colNameAddress ];
+		$entryDate = $res[ ClientClass::$colNameEntryDate ];
 
 	    //Object construction
 	    $entity = new ClientClass();
@@ -135,6 +161,8 @@ class clientClass{
 		$entity->setSurname1($surname1);
 		$entity->setSurname2($surname2);
 		$entity->setDni($dni);
+		$entity->setAddress($address);
+		$entity->setEntryDate($entryDate);
 
 		return $entity;
     }
