@@ -18,11 +18,19 @@ class controlClass{
 			switch($this->params['action']){
 			
 				case '10000':
-					echo toDoClass::listAllProducts($this->params['action']);
+					echo toDoClass::userConnection($this->params['action'], $this->params['JSONData']);
 				break;
-
-				case '10010':
-					echo toDoClass::findProductByType($this->params['action'], $this->params['JSONData']);
+				
+				case '10001':
+					echo toDoClass::getAllUsers();
+				break;
+				
+				case '10002':
+					echo toDoClass::deleteUser($this->params['JSONData']);
+				break;
+				
+				case '10003':
+					echo toDoClass::getAllClients();
 				break;
 				
 				default:

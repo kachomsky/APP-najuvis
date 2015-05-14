@@ -10,6 +10,7 @@ class ProductClass{
 	public $price;
 	public $description;
 	public $image;
+	public $size;
 
 	//******************	Data base Values    ******************/
 	private static $tableName = "product";
@@ -19,6 +20,7 @@ class ProductClass{
 	private static $colNamePrice = "price";
 	private static $colNameDescription = "description";
 	private static $colNameImage = "image";
+	private static $colNameSize = "size";
 
 	//CONSTRUCTOR
 	function __construct(){}
@@ -72,25 +74,36 @@ class ProductClass{
 		$this->image = $image;
 	}
 
+	public function getSize(){
+		return $this->size;
+	}
+
+	public function setSize($size){
+		$this->size = $size;
+	}
+
 	public function getAll(){
 		$data = array();
-		$data["id"] = $this->id;
-		$data["type"] = $this->type;
-		$data["name"] = $this->name;
-		$data["price"] = $this->price;
-		$data["description"] = $this->description;
-		$data["image"] = $this->image;
+		$data["id"] = $this->getId();
+		$data["type"] = $this->getType();
+		$data["name"] = $this->getName();
+		$data["price"] = $this->getPrice();
+		$data["description"] = $this->getDescription();
+		$data["image"] = $this->getImage();
+		$data["size"] = $this->getSize();
+
 
 		return $data;
 	}
 
-	public function setAll($id,$type,$name,$price,$description,$image){
+	public function setAll($id,$type,$name,$price,$description,$image,$size){
 		$this->setId($id);
 		$this->setType($type);
 		$this->setName($name);
 		$this->setPrice($price);
 		$this->setDescription($description);
 		$this->setImage($image);
+		$this->setSize($size);
 	}
 
 	//*************	Database management section *************//
@@ -127,6 +140,7 @@ class ProductClass{
 		$price = $res[ ProductClass::$colNamePrice ];
 		$description = $res[ ProductClass::$colNameDescription ];
 		$image = $res[ ProductClass::$colNameImage ];
+		$size = $res[ ProductClass::$colNameSize ];
 
 	    //Object construction
 	    $entity = new ProductClass();
@@ -136,6 +150,7 @@ class ProductClass{
 		$entity->setPrice($price);
 		$entity->setDescription($description);
 		$entity->setImage($image);
+		$entity->setSize($size);
 
 		return $entity;
     }
@@ -179,7 +194,17 @@ class ProductClass{
     */
     public static function findByType($type) {
     	$cons = "select * from `".ProductClass::$tableName."` where ".ProductClass::$colNameType." = '".$type."'";
-		//return $cons;
+		return ProductClass::findByQuery( $cons );
+    }
+
+    /**
+	 * findLikeName()
+	 * It find the products by type
+	 * @param none
+	 * @return object with the query results
+    */
+    public static function findLikeName($name) {
+    	$cons = "select * from `".ProductClass::$tableName."` where ".ProductClass::$colNameName." like  '%".$name."%'";
 		return ProductClass::findByQuery( $cons );
     }
 
@@ -197,8 +222,8 @@ class ProductClass{
 
 		//Preparing the sentence
 		$stmt = $conn->stmt_init();
-		if ($stmt->prepare("insert into ".ProductClass::$tableName."(`".ProductClass::$colNameType."`,`".ProductClass::$colNameName."`,`".ProductClass::$colNameDescription."`,`".ProductClass::$colNameImage."`) values (?, ?, ?, ?)" )) {
-			$stmt->bind_param("iidsi", $this->getType(), $this->getName(), $this->getDescription(), $this->getImage());
+		if ($stmt->prepare("insert into ".ProductClass::$tableName."(`".ProductClass::$colNameType."`,`".ProductClass::$colNameName."`,`".ProductClass::$colNameDescription."`,`".ProductClass::$colNameImage."`,`".ProductClass::$colNameSize."`) values (?, ?, ?, ?, ?)" )) {
+			$stmt->bind_param("iidsii", $this->getType(), $this->getName(), $this->getDescription(), $this->getImage(), $this->getSize());
 			//executar consulta
 			//print_r("llega aqui");
 			$stmt->execute();
