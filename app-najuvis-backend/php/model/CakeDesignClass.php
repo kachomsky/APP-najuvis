@@ -76,7 +76,7 @@ class CakeDesignClass{
 		//print_r($res);
 		while ( ($row = $res->fetch_array(MYSQLI_BOTH)) != NULL ) {
 			//We get all the values an add into the array
-			$entity = UserClass::fromResultSet( $row );
+			$entity = CakeDesignClass::fromResultSet( $row );
 			
 			$entityList[$i]= $entity;
 			$i++;
